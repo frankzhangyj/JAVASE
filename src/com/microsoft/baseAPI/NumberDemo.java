@@ -26,7 +26,7 @@ public class NumberDemo {
         Float x4 = Float.valueOf(10f);
         Double x5 = Double.valueOf(1.3d);
         Long x6 = Long.valueOf(44L);
-
+        String s7 = String.valueOf(777);
         // 先进行自动拆箱 然后进行自动装箱
         x1 += 3;
         x2 = (byte)(x2 - (byte)0xf);
