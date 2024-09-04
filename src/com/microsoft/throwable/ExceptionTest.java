@@ -12,6 +12,7 @@ public class ExceptionTest {
         return num1 + num2;
     }
 
+
     @Test
     public void test() throws MyException {
         // 捕获自定义异常
@@ -23,5 +24,27 @@ public class ExceptionTest {
             System.out.println("yes");
         }
         //sum(100, 100);
+    }
+
+    enum Weekday {
+        SUN(), MON, TUE, WED, THU, FRI, SAT;
+    }
+
+// 编译后的枚举类 本质也是一个类 不可继承 不可构造 实例字段唯一不可变
+//    判断枚举常量的名字必须使用name() 不能使用toString()
+//    final class Weekday extends Enum {
+//        private final Weekday SUN = new Weekday();
+//        ...
+//
+//        private Weekday(){}
+//    }
+    /**
+     * 不同枚举类型不能比较
+     * 同一个枚举类型中的值可以相互比较 每个常量在JVM中只有一个唯一实例
+     */
+    @Test
+    public void testEquals() {
+        System.out.println(Weekday.SUN == Weekday.SUN);
+
     }
 }

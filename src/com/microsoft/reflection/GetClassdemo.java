@@ -20,7 +20,7 @@ public class GetClassdemo {
         System.out.println(cat.getClass());
 
         // 通过类加载器获取其Class类对象
-        ClassLoader classLoader = cat.getClass().getClassLoader();
+        ClassLoader classLoader = Cat.class.getClassLoader();
         Class aClass1 = classLoader.loadClass(classPath);
         System.out.println(aClass1);
 

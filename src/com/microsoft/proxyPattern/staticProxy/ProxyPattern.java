@@ -1,5 +1,10 @@
-package com.microsoft.multiThreading;
+package com.microsoft.proxyPattern.staticProxy;
 
+/**
+ * 静态代理:
+ * 目标对象和代理对象之间的关系在编译时就已经确定
+ * 代理类和目标类实现相同的接口 代理类中需要有目标类的引用
+ */
 public class ProxyPattern {
     public static void main(String[] args) {
         Tiger tiger = new Tiger();
@@ -19,7 +24,7 @@ class Tiger extends Animal implements Runnable {
     }
 }
 
-//线程代理类，模拟了一个极简的Thread类
+//线程代理类，模拟了一个极简的Thread类 实际不会创建一个新线程
 class ThreadProxy implements Runnable { //可以把 Proxy 类当做 Thread
 
     private Runnable target = null; // 属性类型 是 Runnable
@@ -31,7 +36,7 @@ class ThreadProxy implements Runnable { //可以把 Proxy 类当做 Thread
         }
     }
 
-    public ThreadProxy(Runnable target) {
+    public ThreadProxy(Tiger target) {
         this.target = target;
     }
 

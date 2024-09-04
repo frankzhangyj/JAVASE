@@ -1,16 +1,21 @@
 package com.microsoft.generics;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * 泛型都是引用类型（除了基本数据类型都是引用类型）
+ * 泛型在编译后泛型擦除 自动将泛型替换为Object类
+ * 对于主函数main中已经定义了的泛型 class文件中会保存 在之后自动进行类型转换
  */
 public class CustomGenerics {
     public static void main(String[] args) {
         AA<String> stringC = new AA<String>();
         stringC.hi(0.7d, "nihao");
-
+        // 两个泛型不同的对象不能相互转换
+        /*ArrayList<String> al = new ArrayList<>();
+        ArrayList<Object> al1 = al;*/
         List<Object> list = new ArrayList<>();
         List<String> list1 = new ArrayList<>();
         List<AA> list2 = new ArrayList<>();
@@ -18,6 +23,12 @@ public class CustomGenerics {
         List<CC> list4 = new ArrayList<>();
     }
 
+    /**
+     * 注意使用pecs原则 避免类型兼容问题
+     * 如果从集合中读取类型T 并且不能写入 那么使用 ? extends T 生产
+     * 如果从集合中写入类型T 并且不能读取 那么使用 ? super T 消费
+     * @param c
+     */
     // 在泛型中 ? 是通配符 单独使用表示任意泛型
     public static void printCollection(List<?> c) {
     }

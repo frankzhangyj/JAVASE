@@ -1,14 +1,17 @@
 package com.microsoft.stringBuilder;
 
-import java.time.temporal.ValueRange;
+import java.util.Arrays;
 
 public class StringDemo {
     public static void main(String[] args) {
         // String 实现charSequence接口 创建的字符串存储在字符串常量池中，
 //         编译器会对字符串运算符进行优化，使得不需要创建多余的字符串对象。
         String str1 = "asdfasf" + "asdfasdf";
+
+
         // 而 new 创建的字符串对象在堆上
         String str2 = new String(";ajkfadlf");
+        
         // String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了
         // 因此循环拼接字符串时应避免使用String 使用StringBuilder 存在已经定义的变量，则会调用StringBuilder进行拼接操作
         // 这里str1重新申请了一块内存 中间过程使用StringBuilder 来进行字符串拼接

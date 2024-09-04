@@ -9,7 +9,7 @@ import java.io.IOException;
 public class CalGrade {
     @Test
     public void average() throws IOException {
-        FileReader fileReader = new FileReader("D:\\desktop\\1.txt");
+        FileReader fileReader = new FileReader("D:\\porject\\javaAPI\\src\\com\\microsoft\\IoStream\\1.txt");
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         String trans;
@@ -20,7 +20,7 @@ public class CalGrade {
             sum += Integer.parseInt(trans);
         }
 
-        FileReader fileReader2 = new FileReader("D:\\desktop\\2.txt");
+        FileReader fileReader2 = new FileReader("D:\\porject\\javaAPI\\src\\com\\microsoft\\IoStream\\2.txt");
         BufferedReader bufferedReader2 = new BufferedReader(fileReader2);
 
         while ((trans = bufferedReader2.readLine()) != null) {

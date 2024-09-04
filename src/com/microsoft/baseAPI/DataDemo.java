@@ -1,7 +1,11 @@
 package com.microsoft.baseAPI;
 
+import sun.util.resources.LocaleData;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -36,6 +40,7 @@ public class DataDemo {
         int month = calendar.get(calendar.MONTH) + 1;
         System.out.println("month = " + month);
         System.out.println(year);
+
 
         // 得到两个日期之间的天数差 时间戳是1 jan 1970 开始
         Calendar date1 = Calendar.getInstance();
