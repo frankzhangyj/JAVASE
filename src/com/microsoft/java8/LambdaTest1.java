@@ -19,6 +19,8 @@ import java.util.List;
  *                  Predicate<T> 有参返回为boolean boolean test(T t)
  *
  *  完整写法 (形参类型 形参列表) -> {重写的代码;} lambda 表达式代码块结尾没有; 参数类型可以省略
+ *
+ *  lambda 具有闭包 可以将除了lambda表达式参数 方法体内变量以外的自由变量保存 (必须是值不可变的变量 String)
  */
 public class LambdaTest1 {
 

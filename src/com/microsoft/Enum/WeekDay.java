@@ -3,10 +3,10 @@ package com.microsoft.Enum;
 import org.junit.Test;
 
 /**
- * 枚举实际上也是一个类 继承了Enum 不可被继承 不可构造 实例字段唯一不可变
+ * 枚举实际上也是一个类 继承了Enum 不可被继承 不可构造 实例字段唯一不可变 枚举不是一个数据类型
  * 比如在编译后：
  * //    final class Weekday extends Enum {
- * //        private final Weekday SUN = new Weekday(1, "周天");
+ * //        public static finall Weekday SUN = new Weekday(1, "周天");
  * //        ...
  * //
  * //        private Weekday(int days, String mess){}

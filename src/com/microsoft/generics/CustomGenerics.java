@@ -1,7 +1,9 @@
 package com.microsoft.generics;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -37,6 +39,8 @@ public class CustomGenerics {
     public static void printCollection1(List<? extends AA> c) {
     }
 
+    public static <T extends Comparable<T> & Serializable> void printCollection3(List<T> c) {}
+
     // ? super CC 表示该泛型只能是CC 或者是CC的父类
     public static void printCollection2(List<? super CC> c) {
     }
@@ -63,3 +67,5 @@ class BB extends AA {
 
 class CC extends BB {
 }
+
+class C {}

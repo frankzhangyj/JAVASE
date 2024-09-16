@@ -6,7 +6,7 @@ public class ThreadDemo {
     public static void main(String[] args) {
         // 直接用类继承Thread类来创建线程执行
         Demo demo = new Demo();
-        // 如果直接调用run方法 那么就会一直死循环
+        // 如果直接调用run方法 那么就会一直死循环 不会创建一个新线程
 //        demo.run();
         // 如果使用start方法 可以再创建一个线程 自动执行run方法 然后和当前线程交替执行
         demo.start();

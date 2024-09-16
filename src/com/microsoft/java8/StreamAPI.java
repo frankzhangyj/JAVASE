@@ -84,7 +84,7 @@ public class StreamAPI {
         List<String> list = Arrays.asList("aa", "bb", "cc");
         // aa -> AA bb -> BB cc -> CC
         // 原始流中全是小写字符串 通过map 将所有字符串转换为大写后得到一个新流
-        list.stream().map(str -> str.toUpperCase()).forEach(System.out::println);
+
 
         // 原来流中都是Employee2实例对象 通过map 得到这些实例对象的名字 作为一个新流
         List<Employee2> employee2s = Employee2Data.getList();
@@ -182,9 +182,19 @@ public class StreamAPI {
     public void test7() {
         List<Employee2> list = Employee2Data.getList();
         // 将stream中的数据转换为list
-        List<Employee2> collect = list.stream().filter(e -> e.getSalary() > 6000).collect(Collectors.toList());
+//        List<Employee2> collect = list.stream().filter(e -> e.getSalary() > 6000).collect(Collectors.toList());
         // 将stream中的数据转换为Set
-        Set<Employee2> collect1 = list.stream().filter(e -> e.getSalary() > 4999).collect(Collectors.toSet());
+//        Set<Employee2> collect1 = list.stream().filter(e -> e.getSalary() > 4999).collect(Collectors.toSet());
+
+        Integer[] arr = new Integer[]{1, 2, 3, 4};
+
+        List<Integer> list2 = Arrays.asList(arr);
+
+        int[] array = list2.stream().mapToInt(Integer::valueOf).toArray();
+        for (int i : array) {
+            System.out.println(i);
+        }
+
     }
 
 }

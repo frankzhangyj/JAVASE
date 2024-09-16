@@ -16,6 +16,7 @@ import java.util.function.Supplier;
 
 /**
  * 方法引用本质上是一个 lambda 表达式 而 lambda 表达式作为函数式接口的实例，所以方法引用也是函数式接口的实例
+ * 就相当于lambda表达式方法体中有一个调用方法的语句 将这个lambda表达式简化
  * <p>
  * void accept(T t) 那么方法引用也必须是 void function(T t)
  * 使用格式: 类(或对象) :: 方法名

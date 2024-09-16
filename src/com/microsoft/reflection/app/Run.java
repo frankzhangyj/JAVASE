@@ -1,11 +1,13 @@
 package com.microsoft.reflection.app;
 
 import com.microsoft.reflection.Cat;
+import org.junit.Test;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Properties;
 
 /**
@@ -85,6 +87,12 @@ public class Run {
         field.setAccessible(true);
         field.set(o, "shit");
 
+        // Method类中有一个可以返回方法类型的函数 通过和Modifier类结合可以判断方法的类型
+        System.out.println("method sleep is " + Modifier.toString(sleep.getModifiers()));
+        System.out.println("constructor cat is " + Modifier.toString(declaredConstructor.getModifiers()));
+        System.out.println("field name is " + Modifier.toString(field.getModifiers()));
+        System.out.println("class cat is " + Modifier.toString(cls.getModifiers()));
+        System.out.println(cls.getPackage());
         // 属性对象调用get()方法 得到具体实例对象的属性值
         System.out.println(fields[0].get(o));
 
@@ -142,6 +150,20 @@ public class Run {
         }
         long ed = System.currentTimeMillis();
         System.out.println(ed - st);
+    }
+
+    @Test
+    public void testInhirent() {
+        Father father = new Son();
+        System.out.println(father.getClass().getName());
+    }
+
+    class Father {
+
+    }
+
+    class Son extends Father {
+
     }
 
 }

@@ -8,6 +8,8 @@ public class GenericsDemo {
         // ArrayList dogs = new ArrayList()
         ArrayList<Dog> dogs = new ArrayList<>();
 
+        dogs.get(0).bark();
+
         for (Dog dog : dogs) {
             System.out.println(dog.toString());
         }
@@ -20,6 +22,10 @@ class Dog {
 
     public Dog() {
 
+    }
+
+    public void bark() {
+        System.out.println("wang");
     }
 
 }
