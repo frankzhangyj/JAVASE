@@ -19,7 +19,7 @@ public class ProxyUtil {
         // param3 用于指定生成的代理对象要干什么 也就是扩展目标对象的方法
         Star starProxy = (Star) Proxy.newProxyInstance(ProxyUtil.class.getClassLoader(),
                 new Class[]{Star.class}, new InvocationHandler() {
-                    @Override // param1 当前代理对象 param2 代理调用的方法 param3 方法中的参数
+                    @Override // param1 当前代理对象starProxy param2 代理调用的方法 param3 方法中的参数
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         if (method.getName().equals("sing")) {
                             System.out.println("prepare to take microphone...");

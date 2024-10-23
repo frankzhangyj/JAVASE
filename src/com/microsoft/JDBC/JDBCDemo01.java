@@ -5,6 +5,9 @@ import java.sql.*;
 public class JDBCDemo01 {
     // 创建一个数据库对象的四个素材
     // 访问目标数据库地址 固定格式
+    // 对于mysql5.0 url为jdbc:mysql://localhost:3306/数据库名
+    // 对于mysql8.0 url为jdbc:mysql://localhost:3306/数据库名?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/student?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8";
     // 登录名
     public static final String USER = "root";
